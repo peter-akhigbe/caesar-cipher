@@ -1,15 +1,14 @@
+# frozen_string_literal: true
 def caesar_cipher(str, num)
-  arr = str.split("")
+  arr = str.split('')
   result = []
-  arr =
-    arr.each do |item|
-      if item.between?("a", "z") || item.between?("A", "Z")
-        num.times { item.next! }
-      end
-      result << item[-1]
-    end
+
+  arr.each do |letter|
+    num.times { letter.next! } if letter.between?('a', 'z') || letter.between?('A', 'Z')
+    result << letter[-1]
+  end
 
   result.join
 end
 
-p caesar_cipher("What a string!", 5) # "Bmfy f xywnsl!"
+p caesar_cipher('What a string!', 5) # "Bmfy f xywnsl!"
