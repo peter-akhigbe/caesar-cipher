@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 def caesar_cipher(str, num)
   arr = str.split('')
   result = []
